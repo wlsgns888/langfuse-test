@@ -29,7 +29,7 @@ source .venv/bin/activate  # Linux/Mac
 .venv\Scripts\activate  # Windows
 
 # Step 3: 패키지 설치 (초고속!)
-uv pip install -e .
+uv pip install .
 ```
 
 ## 3. 환경 변수 설정
@@ -94,7 +94,7 @@ rm -rf .venv
 # 새로 생성
 uv venv
 source .venv/bin/activate
-uv pip install -e .
+uv pip install .
 ```
 
 ---
@@ -136,7 +136,7 @@ uv venv --python 3.10
 ```bash
 # 캐시 삭제 후 재설치
 rm -rf ~/.cache/uv
-uv pip install -e .
+uv pip install .
 ```
 
 ---

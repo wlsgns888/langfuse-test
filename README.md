@@ -53,14 +53,17 @@ curl -LsSf https://astral.sh/uv/install.sh | sh
 # 또는 Mac: brew install uv
 # 또는 Windows: powershell -c "irm https://astral.sh/uv/install.ps1 | iex"
 
-# 3. 가상환경 생성 및 패키지 설치
+# 3. 가상환경 생성
 uv venv
 source .venv/bin/activate  # Linux/Mac
 # 또는
 .venv\Scripts\activate  # Windows
 
-# 4. 패키지 설치
-uv pip install -e .
+# 4. 패키지 설치 (방법 1: pyproject.toml 사용)
+uv pip install .
+
+# 또는 (방법 2: requirements.txt 사용)
+uv pip install -r requirements.txt
 ```
 
 ### 방법 2: pip 사용 (기존 방식)
