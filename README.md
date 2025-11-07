@@ -13,6 +13,8 @@ Langfuse 최신 버전의 모든 주요 기능을 실제로 사용하고 테스�
 - [Langchain 통합](#langchain-통합)
 - [Agent 구현](#agent-구현)
 
+> 💡 **빠른 시작을 원하시나요?** [QUICK_START.md](QUICK_START.md)를 참조하세요!
+
 ## 🎯 개요
 
 이 프로젝트는 Langfuse의 모든 주요 기능을 실제로 활용하는 예제를 제공합니다. 각 예제는 실용적인 사용 사례를 보여주며, 상세한 설명과 함께 제공됩니다.
@@ -27,25 +29,44 @@ Langfuse 최신 버전의 모든 주요 기능을 실제로 사용하고 테스�
 
 ## 🚀 설치
 
-### 1. 저장소 클론
+### 방법 1: uv 사용 (권장 ⚡ 빠름!)
+
+[uv](https://github.com/astral-sh/uv)는 Rust로 작성된 초고속 Python 패키지 관리자입니다.
 
 ```bash
+# 1. 저장소 클론
 git clone <repository-url>
 cd langfuse-test
+
+# 2. uv 설치 (아직 설치하지 않은 경우)
+curl -LsSf https://astral.sh/uv/install.sh | sh
+# 또는 Mac: brew install uv
+# 또는 Windows: powershell -c "irm https://astral.sh/uv/install.ps1 | iex"
+
+# 3. 가상환경 생성 및 패키지 설치
+uv venv
+source .venv/bin/activate  # Linux/Mac
+# 또는
+.venv\Scripts\activate  # Windows
+
+# 4. 패키지 설치
+uv pip install -e .
 ```
 
-### 2. 가상 환경 생성 (권장)
+### 방법 2: pip 사용 (기존 방식)
 
 ```bash
+# 1. 저장소 클론
+git clone <repository-url>
+cd langfuse-test
+
+# 2. 가상 환경 생성
 python -m venv venv
 source venv/bin/activate  # Linux/Mac
 # 또는
 venv\Scripts\activate  # Windows
-```
 
-### 3. 패키지 설치
-
-```bash
+# 3. 패키지 설치
 pip install -r requirements.txt
 ```
 
@@ -56,6 +77,13 @@ pip install -r requirements.txt
 - `langchain-community>=0.3.13` - 커뮤니티 통합
 - `openai>=1.58.1` - OpenAI API
 - `python-dotenv>=1.0.0` - 환경 변수 관리
+
+### uv를 사용하는 이유
+
+- ⚡ **10-100배 빠른 속도**: pip보다 훨씬 빠른 패키지 설치
+- 🔒 **안정적인 의존성**: 자동 의존성 해결
+- 🎯 **간편한 사용**: pip과 호환되는 인터페이스
+- 💾 **효율적인 캐싱**: 디스크 공간 절약
 
 ## ⚙️ 환경 설정
 
@@ -92,7 +120,9 @@ OPENAI_API_KEY=your_openai_api_key_here
 
 ```
 langfuse-test/
-├── requirements.txt              # 패키지 의존성
+├── pyproject.toml               # 프로젝트 설정 (uv용)
+├── requirements.txt              # 패키지 의존성 (pip용)
+├── .python-version              # Python 버전 지정
 ├── .env.example                  # 환경 변수 예제
 ├── README.md                     # 이 파일
 ├── USAGE_GUIDE.md               # 상세 사용 가이드
