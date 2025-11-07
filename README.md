@@ -27,6 +27,16 @@ Langfuse 최신 버전의 모든 주요 기능을 실제로 사용하고 테스�
 - ✅ Agent 구현 예제 포함
 - ✅ 실행 가능한 코드
 
+## 🌿 브랜치 정보
+
+- **메인 브랜치**: `claude/main-011CUt9bDg2NYeMmKh2DumZH` - 안정적인 메인 개발 브랜치
+- **기능 브랜치**: `claude/langfuse-feature-testing-011CUt9bDg2NYeMmKh2DumZH` - 초기 개발 브랜치
+
+메인 브랜치를 클론하여 사용하세요:
+```bash
+git clone -b claude/main-011CUt9bDg2NYeMmKh2DumZH <repository-url>
+```
+
 ## 🚀 설치
 
 ### 방법 1: uv 사용 (권장 ⚡ 빠름!)
