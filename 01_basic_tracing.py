@@ -85,7 +85,7 @@ def add_spans_example(trace):
         name="llm_call",
         metadata={
             "step": "2",
-            "model": "gpt-4",
+            "model": "claude-3-5-haiku-20241022",
             "temperature": 0.7
         }
     )
@@ -103,7 +103,7 @@ def add_spans_example(trace):
     )
 
     print(f"\n✓ LLM Call Span 완료")
-    print(f"  - Model: gpt-4")
+    print(f"  - Model: claude-3-5-haiku-20241022")
     print(f"  - Tokens: 25")
     print(f"  - Cost: $0.001")
     print(f"  - Response: {llm_response}")

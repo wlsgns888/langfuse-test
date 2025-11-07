@@ -54,7 +54,7 @@ def simple_session_example():
 
     generation1 = trace1.generation(
         name="greeting_response",
-        model="gpt-3.5-turbo",
+        model="claude-3-5-haiku-20241022",
         input="Hello, I need help with my account"
     )
 
@@ -81,7 +81,7 @@ def simple_session_example():
 
     generation2 = trace2.generation(
         name="problem_analysis",
-        model="gpt-3.5-turbo",
+        model="claude-3-5-haiku-20241022",
         input="I can't login to my account"
     )
 
@@ -108,7 +108,7 @@ def simple_session_example():
 
     generation3 = trace3.generation(
         name="solution_generation",
-        model="gpt-3.5-turbo",
+        model="claude-3-5-haiku-20241022",
         input="Yes, but I didn't receive the reset email"
     )
 
@@ -160,7 +160,7 @@ def multi_user_session_example():
 
         generation = trace.generation(
             name="response_generation",
-            model="gpt-3.5-turbo",
+            model="claude-3-5-haiku-20241022",
             input=user['query']
         )
 
@@ -238,7 +238,7 @@ def long_conversation_session_example():
 
         generation = trace.generation(
             name=f"turn_{turn_data['turn']}_generation",
-            model="gpt-4",
+            model="claude-3-5-haiku-20241022",
             input=turn_data['user']
         )
 
@@ -327,7 +327,7 @@ def session_with_metadata_example():
 
         generation = trace.generation(
             name=f"{task['name']}_generation",
-            model="gpt-4",
+            model="claude-3-5-haiku-20241022",
             input=task['description']
         )
 
@@ -406,7 +406,7 @@ def session_analytics_example():
 
             generation = trace.generation(
                 name=f"generation_{i+1}",
-                model="gpt-3.5-turbo",
+                model="claude-3-5-haiku-20241022",
                 input=f"Query {i+1}"
             )
 

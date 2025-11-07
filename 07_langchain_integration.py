@@ -55,8 +55,8 @@ def simple_llm_call_with_callback():
     print("  - 모든 Langchain 작업이 자동으로 Langfuse에 기록됩니다")
 
     # 실제 LLM 사용 시:
-    # from langchain_openai import ChatOpenAI
-    # llm = ChatOpenAI(model="gpt-3.5-turbo")
+    # from langchain_anthropic import ChatAnthropic
+    # llm = ChatAnthropic(model="claude-3-5-haiku-20241022")
     # response = llm.invoke(
     #     "What is the capital of France?",
     #     config={"callbacks": [langfuse_handler]}

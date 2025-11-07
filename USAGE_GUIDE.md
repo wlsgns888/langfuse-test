@@ -94,8 +94,8 @@ python 01_basic_tracing.py
 trace = langfuse.trace(name="llm_call")
 
 generation = trace.generation(
-    name="gpt4_response",
-    model="gpt-4",
+    name="claude_haiku_response",
+    model="claude-3-5-haiku-20241022",
     model_parameters={
         "temperature": 0.7,
         "max_tokens": 500
@@ -128,15 +128,19 @@ generation.end(
 
 ```python
 MODEL_COSTS = {
-    "gpt-4": {
-        "prompt": 0.03 / 1000,
-        "completion": 0.06 / 1000
+    "claude-3-5-haiku-20241022": {
+        "prompt": 0.25 / 1000000,  # $0.25 per 1M tokens
+        "completion": 1.25 / 1000000  # $1.25 per 1M tokens
+    },
+    "claude-3-5-sonnet-20241022": {
+        "prompt": 3.0 / 1000000,
+        "completion": 15.0 / 1000000
     }
 }
 
 cost = (
-    prompt_tokens * MODEL_COSTS["gpt-4"]["prompt"] +
-    completion_tokens * MODEL_COSTS["gpt-4"]["completion"]
+    prompt_tokens * MODEL_COSTS["claude-3-5-haiku-20241022"]["prompt"] +
+    completion_tokens * MODEL_COSTS["claude-3-5-haiku-20241022"]["completion"]
 )
 ```
 
@@ -447,9 +451,9 @@ handler.trace(
 ### Langchain과 함께 사용
 
 ```python
-from langchain_openai import ChatOpenAI
+from langchain_anthropic import ChatAnthropic
 
-llm = ChatOpenAI(model="gpt-3.5-turbo")
+llm = ChatAnthropic(model="claude-3-5-haiku-20241022")
 
 # 콜백 핸들러 전달
 response = llm.invoke(

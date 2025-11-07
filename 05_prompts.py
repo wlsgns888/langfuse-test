@@ -121,7 +121,7 @@ def fetch_and_use_prompt():
 
     generation = trace.generation(
         name="qa_response",
-        model="gpt-3.5-turbo",
+        model="claude-3-5-haiku-20241022",
         input=final_prompt,
         prompt={
             "name": prompt_name,
@@ -193,7 +193,7 @@ def prompt_versioning_example():
 
         generation = trace.generation(
             name="translation",
-            model="gpt-3.5-turbo",
+            model="claude-3-5-haiku-20241022",
             input=final_prompt
         )
 
@@ -294,7 +294,7 @@ def prompt_with_chat_template():
 
         generation = trace.generation(
             name="chat_response",
-            model="gpt-3.5-turbo",
+            model="claude-3-5-haiku-20241022",
             input=messages
         )
 
@@ -383,7 +383,7 @@ Text: {{text}}"""
 
             generation = trace.generation(
                 name=f"sentiment_classification_{variation['variant']}",
-                model="gpt-3.5-turbo",
+                model="claude-3-5-haiku-20241022",
                 input=final_prompt
             )
 
@@ -484,7 +484,7 @@ def prompt_fallback_example():
 
     generation = trace.generation(
         name="support_response",
-        model="gpt-3.5-turbo",
+        model="claude-3-5-haiku-20241022",
         input="How do I return a product?",
         prompt={
             "name": prompt_config['name'],

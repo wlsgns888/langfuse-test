@@ -7,9 +7,9 @@ requires-python = ">=3.10"
 dependencies = [
     "langfuse>=2.54.4",
     "langchain==1.0.4",
-    "langchain-openai>=0.2.11",
+    "langchain-anthropic>=0.3.0",
     "langchain-community>=0.3.13",
-    "openai>=1.58.1",
+    "anthropic>=0.39.0",
     "python-dotenv>=1.0.0",
 ]
 
