@@ -142,7 +142,7 @@ def run_dataset_evaluation():
         }
     ]
 
-    model_name = "claude-3-5-haiku-20241022"
+    model_name = "gpt-3.5-turbo"
     run_name = f"evaluation_run_{datetime.now().strftime('%Y%m%d_%H%M%S')}"
 
     print(f"\n평가 실행: {run_name}")
@@ -256,7 +256,7 @@ def compare_models_with_dataset():
     ]
 
     # 비교할 모델들
-    models = ["claude-3-5-haiku-20241022", "claude-3-5-haiku-20241022", "claude-3-sonnet"]
+    models = ["gpt-3.5-turbo", "gpt-3.5-turbo", "gpt-4"]
 
     print(f"\n테스트 데이터셋: {len(test_dataset)}개 아이템")
     print(f"비교 모델: {len(models)}개\n")
@@ -287,7 +287,7 @@ def compare_models_with_dataset():
             # 모델별 응답 시뮬레이션
             if "gpt-3.5" in model:
                 outputs = ["Hola", "Adiós", "Gracias"]
-            elif "claude-3-5-haiku-20241022" in model:
+            elif "gpt-3.5-turbo" in model:
                 outputs = ["Hola", "Adiós", "Gracias"]
             else:  # claude
                 outputs = ["Hola", "Adiós", "Gracias"]
@@ -368,7 +368,7 @@ def regression_testing_example():
 
         generation = trace.generation(
             name="model_response",
-            model="claude-3-5-haiku-20241022",
+            model="gpt-3.5-turbo",
             input=item['input']
         )
 
@@ -478,7 +478,7 @@ def dataset_with_golden_answers():
 
         generation = trace.generation(
             name="answer_generation",
-            model="claude-3-5-haiku-20241022",
+            model="gpt-3.5-turbo",
             input=item['input']
         )
 
@@ -571,7 +571,7 @@ def benchmark_dataset_example():
     ]
 
     benchmark_name = "Custom Tech Benchmark"
-    model = "claude-3-5-haiku-20241022"
+    model = "gpt-3.5-turbo"
 
     print(f"\nBenchmark: {benchmark_name}")
     print(f"Model: {model}")

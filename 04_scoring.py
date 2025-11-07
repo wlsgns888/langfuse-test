@@ -40,7 +40,7 @@ def basic_scoring_example():
 
     generation = trace.generation(
         name="answer_generation",
-        model="claude-3-5-haiku-20241022",
+        model="gpt-3.5-turbo",
         input="What is the capital of France?"
     )
 
@@ -134,7 +134,7 @@ def user_feedback_scoring_example():
 
         generation = trace.generation(
             name="support_response",
-            model="claude-3-5-haiku-20241022",
+            model="gpt-3.5-turbo",
             input=feedback_data['query']
         )
 
@@ -215,7 +215,7 @@ def automated_quality_scoring_example():
 
         generation = trace.generation(
             name="model_response",
-            model="claude-3-5-haiku-20241022",
+            model="gpt-3.5-turbo",
             input=test_case['input']
         )
 
@@ -280,13 +280,13 @@ def ab_testing_scoring_example():
         metadata={
             "experiment": "model_comparison",
             "variant": "A",
-            "model": "claude-3-5-haiku-20241022"
+            "model": "gpt-3.5-turbo"
         }
     )
 
     generation_a = trace_a.generation(
         name="model_a_response",
-        model="claude-3-5-haiku-20241022",
+        model="gpt-3.5-turbo",
         input=test_prompt
     )
 
@@ -318,13 +318,13 @@ def ab_testing_scoring_example():
         metadata={
             "experiment": "model_comparison",
             "variant": "B",
-            "model": "claude-3-5-haiku-20241022"
+            "model": "gpt-3.5-turbo"
         }
     )
 
     generation_b = trace_b.generation(
         name="model_b_response",
-        model="claude-3-5-haiku-20241022",
+        model="gpt-3.5-turbo",
         input=test_prompt
     )
 
@@ -384,7 +384,7 @@ def custom_scoring_categories_example():
 
     generation = trace.generation(
         name="support_response",
-        model="claude-3-5-haiku-20241022",
+        model="gpt-3.5-turbo",
         input="My order hasn't arrived yet. What should I do?"
     )
 
@@ -492,7 +492,7 @@ def scoring_with_thresholds_example():
 
         generation = trace.generation(
             name="evaluated_response",
-            model="claude-3-5-haiku-20241022",
+            model="gpt-3.5-turbo",
             input=response_data['input']
         )
 

@@ -86,9 +86,9 @@ pip install -r requirements.txt
 ### 설치되는 패키지:
 - `langfuse>=2.54.4` - Langfuse 클라이언트
 - `langchain==1.0.4` - Langchain 프레임워크
-- `langchain-anthropic>=0.3.0` - Anthropic Claude 통합
+- `langchain-openai>=0.2.11` - OpenAI 통합
 - `langchain-community>=0.3.13` - 커뮤니티 통합
-- `anthropic>=0.39.0` - Anthropic Claude API
+- `openai>=1.58.1` - OpenAI API
 - `python-dotenv>=1.0.0` - 환경 변수 관리
 
 ### uv를 사용하는 이유
@@ -118,8 +118,8 @@ LANGFUSE_PUBLIC_KEY=your_public_key_here
 LANGFUSE_SECRET_KEY=your_secret_key_here
 LANGFUSE_HOST=https://cloud.langfuse.com
 
-# Anthropic Claude 설정 (선택사항 - 실제 LLM 사용 시)
-ANTHROPIC_API_KEY=your_anthropic_api_key_here
+# OpenAI 설정 (선택사항 - 실제 LLM 사용 시)
+OPENAI_API_KEY=your_openai_api_key_here
 ```
 
 ### Langfuse 키 발급 방법:

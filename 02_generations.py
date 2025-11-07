@@ -39,8 +39,8 @@ def simple_generation_example():
 
     # Generation 생성 - LLM 호출 시뮬레이션
     generation = trace.generation(
-        name="claude_haiku_completion",
-        model="claude-3-5-haiku-20241022",
+        name="gpt35_turbo_completion",
+        model="gpt-3.5-turbo",
         model_parameters={
             "temperature": 0.7,
             "max_tokens": 150,
@@ -73,7 +73,7 @@ quantum bits or 'qubits' that can exist in multiple states simultaneously."""
     )
 
     print(f"✓ Generation 완료")
-    print(f"  - Model: claude-3-5-haiku-20241022")
+    print(f"  - Model: gpt-3.5-turbo")
     print(f"  - Temperature: 0.7")
     print(f"  - Prompt Tokens: 25")
     print(f"  - Completion Tokens: 45")
@@ -114,7 +114,7 @@ def chat_generation_example():
 
     generation_1 = trace.generation(
         name="chat_turn_1",
-        model="claude-3-5-haiku-20241022",
+        model="gpt-3.5-turbo",
         input=conversation_history.copy()
     )
 
@@ -140,7 +140,7 @@ def chat_generation_example():
 
     generation_2 = trace.generation(
         name="chat_turn_2",
-        model="claude-3-5-haiku-20241022",
+        model="gpt-3.5-turbo",
         input=conversation_history.copy()
     )
 
@@ -166,7 +166,7 @@ def chat_generation_example():
 
     generation_3 = trace.generation(
         name="chat_turn_3",
-        model="claude-3-5-haiku-20241022",
+        model="gpt-3.5-turbo",
         input=conversation_history.copy()
     )
 
@@ -211,8 +211,8 @@ def streaming_generation_example():
     )
 
     generation = trace.generation(
-        name="streaming_claude_haiku",
-        model="claude-3-5-haiku-20241022",
+        name="streaming_gpt35_turbo",
+        model="gpt-3.5-turbo",
         input="Write a haiku about coding"
     )
 
@@ -268,11 +268,11 @@ def generation_with_cost_tracking():
 
     # 모델별 비용 (예시)
     MODEL_COSTS = {
-        "claude-3-5-haiku-20241022": {
+        "gpt-3.5-turbo": {
             "prompt": 0.03 / 1000,  # $0.03 per 1K tokens
             "completion": 0.06 / 1000  # $0.06 per 1K tokens
         },
-        "claude-3-5-haiku-20241022": {
+        "gpt-3.5-turbo": {
             "prompt": 0.0005 / 1000,
             "completion": 0.0015 / 1000
         }
@@ -280,12 +280,12 @@ def generation_with_cost_tracking():
 
     models_to_test = [
         {
-            "name": "claude-3-5-haiku-20241022",
+            "name": "gpt-3.5-turbo",
             "prompt_tokens": 500,
             "completion_tokens": 300
         },
         {
-            "name": "claude-3-5-haiku-20241022",
+            "name": "gpt-3.5-turbo",
             "prompt_tokens": 500,
             "completion_tokens": 300
         }
@@ -361,17 +361,17 @@ def generation_comparison_example():
 
     models = [
         {
-            "name": "claude-3-5-haiku-20241022",
+            "name": "gpt-3.5-turbo",
             "response": "Machine learning is a subset of AI that enables computers to learn from data and improve their performance without explicit programming.",
             "tokens": {"prompt": 12, "completion": 23, "total": 35}
         },
         {
-            "name": "claude-3-5-haiku-20241022",
+            "name": "gpt-3.5-turbo",
             "response": "Machine learning is when computers learn patterns from data to make predictions or decisions.",
             "tokens": {"prompt": 12, "completion": 16, "total": 28}
         },
         {
-            "name": "claude-3-sonnet",
+            "name": "gpt-4",
             "response": "Machine learning is a method where algorithms learn from data patterns to make predictions without being explicitly programmed.",
             "tokens": {"prompt": 12, "completion": 20, "total": 32}
         }
